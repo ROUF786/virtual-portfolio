@@ -32,7 +32,7 @@
   display:grid; place-items:center;
   background:linear-gradient(135deg,var(--primary),var(--secondary));
 }
-.logo__icon img{ width:18px; height:18px; }
+.logo__icon img{ width:40px; height:40px; }
 
 .nav__links{ display:flex; align-items:center; gap:36px; }
 .nav__link{
