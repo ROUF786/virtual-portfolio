@@ -1,0 +1,56 @@
+/* ==========================================================
+   SECTIONS.CSS — About, Services, Work, Testimonials, Contact, Footer
+   Mobile-first base layout only. All @media overrides live in responsive.css
+========================================================== */
+
+/* ---------- About ---------- */
+.about__grid{ display:grid; grid-template-columns:1fr; gap:32px; align-items:center; }
+
+/* ---------- Services ---------- */
+.services__grid{ margin-top:44px; display:grid; grid-template-columns:1fr; gap:22px; }
+
+/* ---------- Work / Portfolio ---------- */
+.work__grid{ margin-top:44px; display:grid; grid-template-columns:1fr; gap:20px; }
+
+/* ---------- Testimonials ---------- */
+.reviews__grid{ margin-top:44px; display:grid; grid-template-columns:1fr; gap:22px; }
+
+/* ---------- Contact ---------- */
+.contact__wrap{ max-width:560px; margin-inline:auto; text-align:center; }
+.contact__list{ display:flex; flex-direction:column; gap:14px; margin:26px 0 30px; text-align:left; }
+.contact__list li{ display:flex; align-items:center; gap:12px; color:var(--paragraph); font-size:14.5px; }
+.contact__list i{
+  width:36px; height:36px; border-radius:10px;
+  display:grid; place-items:center;
+  background:rgba(79,140,255,.12); color:var(--primary);
+  flex-shrink:0;
+}
+.contact__actions{ display:grid; grid-template-columns:1fr; gap:14px; margin-bottom:30px; }
+.contact__socials{ display:flex; justify-content:center; gap:12px; }
+
+/* ---------- Footer ---------- */
+.footer{ border-top:1px solid var(--border); padding:56px 0 0; text-align:center; }
+.footer__brand p{ color:var(--paragraph); font-size:13.5px; margin:14px auto 22px; max-width:36ch; }
+.footer__social{ display:flex; justify-content:center; gap:12px; margin-bottom:36px; }
+.footer__social a{
+  width:38px; height:38px; border-radius:10px; border:1px solid var(--border);
+  display:grid; place-items:center;
+  transition:background var(--transition), border-color var(--transition), transform var(--transition);
+}
+.footer__social a:hover{ background:rgba(79,140,255,.12); border-color:rgba(79,140,255,.4); transform:translateY(-3px); }
+.footer__bottom{
+  border-top:1px solid var(--border);
+  padding:20px;
+  font-size:12.5px;
+  color:var(--paragraph);
+}
+
+/* ---------- Social icon buttons (reused in hero/contact/footer) ---------- */
+.social-icon{
+  width:44px; height:44px; border-radius:12px;
+  display:grid; place-items:center;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.03);
+  transition:background var(--transition), border-color var(--transition), transform var(--transition);
+}
+.social-icon:hover{ background:rgba(79,140,255,.14); border-color:rgba(79,140,255,.4); transform:translateY(-3px); }

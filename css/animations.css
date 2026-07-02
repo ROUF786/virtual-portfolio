@@ -1,0 +1,77 @@
+/* ==========================================================
+   ANIMATIONS.CSS — Keyframes + GSAP Helper Classes + Custom Cursor
+========================================================== */
+
+/* ---------- Scroll-reveal helper classes ----------
+   GSAP (animations.js) animates these from their "hidden" state
+   to visible. If JS fails to load, content is still readable
+   because these are just opacity/transform starting points. */
+.reveal, .reveal-left, .reveal-right{
+  opacity:0; filter:blur(6px);
+  will-change:transform,opacity,filter;
+}
+.reveal{ transform:translateY(30px); }
+.reveal-left{ transform:translateX(-40px); }
+.reveal-right{ transform:translateX(40px); }
+
+.anim-hero{ opacity:0; transform:translateY(24px); filter:blur(8px); }
+
+/* ---------- Keyframes ---------- */
+@keyframes float{
+  0%,100%{ transform:translate(0,0) scale(1); }
+  50%{ transform:translate(30px,-30px) scale(1.08); }
+}
+
+@keyframes idlefloat{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-8px); }
+}
+
+@keyframes scrollhint{
+  0%{ opacity:1; top:8px; }
+  100%{ opacity:0; top:20px; }
+}
+
+@keyframes ripple{
+  to{ transform:scale(2.2); opacity:0; }
+}
+
+/* ---------- Custom cursor (cursor.js) ---------- */
+.cursor-dot,
+.cursor-ring{
+  position:fixed;
+  top:0; left:0;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:9999;
+  transform:translate(-50%,-50%);
+}
+.cursor-dot{
+  width:6px; height:6px;
+  background:var(--secondary);
+}
+.cursor-ring{
+  width:34px; height:34px;
+  border:1.5px solid rgba(120,166,255,.5);
+  transition:width .2s var(--ease), height .2s var(--ease), border-color .2s var(--ease);
+}
+.cursor-ring.is-active{
+  width:52px; height:52px;
+  border-color:var(--primary);
+  background:rgba(79,140,255,.08);
+}
+
+/* ---------- Mouse-glow spotlight (parallax.js toggles opacity) ---------- */
+.cursor-glow{
+  position:fixed;
+  top:0; left:0;
+  width:420px; height:420px;
+  margin-left:-210px; margin-top:-210px;
+  background:radial-gradient(circle, var(--primary-glow), transparent 70%);
+  pointer-events:none;
+  z-index:2;
+  mix-blend-mode:screen;
+  opacity:0;
+  transition:opacity .4s ease;
+}
+/* Visibility on touch devices is handled in responsive.css (kept mobile-only rules together) */

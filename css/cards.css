@@ -1,0 +1,76 @@
+/* ==========================================================
+   CARDS.CSS — Glass Cards, Service Cards, Work & Testimonial Cards
+========================================================== */
+
+/* ---------- Shared glass-card base ---------- */
+.glass-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  transition:transform var(--transition), border-color var(--transition),
+             background var(--transition), box-shadow var(--transition);
+}
+.glass-card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(79,140,255,.35);
+  background:var(--card-hover);
+  box-shadow:0 20px 40px -22px var(--primary-glow);
+}
+
+/* ---------- About quick-facts card ---------- */
+.about__card{ padding:32px; }
+.about__list{ display:flex; flex-direction:column; gap:12px; margin-top:20px; }
+.about__list li{ display:flex; align-items:center; gap:10px; color:var(--paragraph); font-size:14.5px; }
+.about__list i{ color:var(--primary); }
+
+/* ---------- Service cards ---------- */
+.service-card{
+  padding:30px 24px;
+  animation:idlefloat 6s ease-in-out infinite;
+}
+.service-card:nth-child(2n){ animation-delay:-2s; }
+.service-card:nth-child(3n){ animation-delay:-4s; }
+.service-card__icon{
+  width:50px; height:50px; border-radius:14px;
+  display:grid; place-items:center;
+  background:linear-gradient(135deg, rgba(79,140,255,.18), rgba(120,166,255,.06));
+  color:var(--primary);
+  font-size:20px;
+  margin-bottom:18px;
+}
+.service-card h3{ font-size:17px; margin-bottom:8px; font-weight:700; }
+.service-card p{ color:var(--paragraph); font-size:13.5px; }
+
+/* ---------- Work / portfolio cards ---------- */
+.work-card{
+  position:relative;
+  border-radius:var(--radius);
+  overflow:hidden;
+  aspect-ratio:4/3;
+  border:1px solid var(--border);
+  background:var(--card);
+}
+.work-card img{ width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease); }
+.work-card:hover img{ transform:scale(1.06); }
+.work-card__fallback{
+  position:absolute; inset:0;
+  display:grid; place-items:center;
+  color:var(--primary);
+  font-size:34px;
+  background:linear-gradient(160deg, var(--card), #060a18);
+}
+.work-card__label{
+  position:absolute; left:0; right:0; bottom:0;
+  padding:14px 16px;
+  font-size:13px; font-weight:600;
+  background:linear-gradient(0deg, rgba(2,4,12,.85), transparent);
+}
+
+/* ---------- Testimonial cards ---------- */
+.review-card{ padding:26px; }
+.review-card__stars{ color:var(--primary); font-size:13px; margin-bottom:14px; }
+.review-card p{ color:var(--paragraph); font-size:14px; margin-bottom:18px; }
+.review-card__person{ display:flex; align-items:center; gap:12px; }
+.review-card__person i{ font-size:34px; color:var(--secondary); }
+.review-card__person strong{ display:block; font-size:13.5px; }
+.review-card__person span{ display:block; font-size:12px; color:var(--paragraph); }

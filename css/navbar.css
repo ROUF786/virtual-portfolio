@@ -1,0 +1,64 @@
+/* ==========================================================
+   NAVBAR.CSS — Header, Logo, Navigation
+========================================================== */
+
+.header{
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:100;
+  height:var(--header-h);
+  display:flex;
+  align-items:center;
+  background:transparent;
+  border-bottom:1px solid transparent;
+  transition:background var(--transition), height var(--transition),
+             border-color var(--transition), backdrop-filter var(--transition);
+}
+.header.is-scrolled{
+  height:64px;
+  background:rgba(5,8,22,.75);
+  backdrop-filter:blur(14px);
+  border-bottom-color:var(--border);
+}
+
+.nav{ display:flex; align-items:center; justify-content:space-between; width:100%; }
+
+.logo{
+  display:flex; align-items:center; gap:10px;
+  font-weight:800; font-size:18px; letter-spacing:-.01em;
+}
+.logo__icon{
+  width:36px; height:36px; border-radius:10px;
+  display:grid; place-items:center;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+}
+.logo__icon img{ width:18px; height:18px; }
+
+.nav__links{ display:flex; align-items:center; gap:36px; }
+.nav__link{
+  font-size:14px; font-weight:500; color:var(--paragraph);
+  position:relative; padding:6px 0;
+  transition:color var(--transition);
+}
+.nav__link::after{
+  content:''; position:absolute; left:0; bottom:0; height:2px; width:0;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  transition:width var(--transition);
+}
+.nav__link:hover{ color:var(--text); }
+.nav__link:hover::after{ width:100%; }
+
+.nav__toggle{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  width:32px; height:32px;
+  align-items:center; justify-content:center;
+}
+.nav__toggle span{
+  width:22px; height:2px; background:var(--text); border-radius:2px;
+  transition:transform var(--transition), opacity var(--transition);
+}
+.nav__toggle.is-active span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.nav__toggle.is-active span:nth-child(2){ opacity:0; }
+.nav__toggle.is-active span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }

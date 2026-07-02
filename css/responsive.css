@@ -1,0 +1,69 @@
+/* ==========================================================
+   RESPONSIVE.CSS — All breakpoints. Load this file LAST.
+   Base styles everywhere else are mobile-first; this file
+   only ever ADDS/OVERRIDES for larger screens (min-width),
+   except the two touch-device exceptions marked below.
+========================================================== */
+
+/* ---------- Touch devices: hide desktop-only cursor effects ---------- */
+@media (max-width:900px), (hover:none){
+  .cursor-dot, .cursor-ring, .cursor-glow{ display:none; }
+}
+
+/* ---------- Navbar ---------- */
+@media (max-width:900px){
+  .nav__toggle{ display:flex; }
+  .nav__links{
+    position:fixed;
+    top:var(--header-h); left:0; right:0;
+    flex-direction:column;
+    gap:0;
+    background:rgba(5,8,22,.97);
+    backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--border);
+    transform:translateY(-8px);
+    opacity:0; visibility:hidden;
+    transition:opacity var(--transition), transform var(--transition), visibility var(--transition);
+    padding:8px 0;
+  }
+  .nav__links.is-open{ opacity:1; visibility:visible; transform:translateY(0); }
+  .nav__link{ display:block; width:100%; padding:16px 24px; }
+  .nav__link::after{ display:none; }
+}
+
+/* ---------- Hero ---------- */
+@media (min-width:640px){
+  .hero__photo-frame{ width:160px; height:160px; }
+  .hero__photo-inner i{ font-size:64px; }
+}
+@media (max-width:600px){
+  .hero__scroll-hint{ display:none; }
+}
+
+/* ---------- About ---------- */
+@media (min-width:860px){
+  .about__grid{ grid-template-columns:1fr 1fr; text-align:left; }
+  .about__grid .section-eyebrow,
+  .about__grid .section-title,
+  .about__grid .section-text{ margin-left:0; }
+}
+
+/* ---------- Services ---------- */
+@media (min-width:640px){ .services__grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:980px){ .services__grid{ grid-template-columns:repeat(3,1fr); } }
+
+/* ---------- Work / Portfolio ---------- */
+@media (min-width:640px){ .work__grid{ grid-template-columns:repeat(3,1fr); } }
+
+/* ---------- Testimonials ---------- */
+@media (min-width:700px){ .reviews__grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:980px){ .reviews__grid{ grid-template-columns:repeat(3,1fr); } }
+
+/* ---------- Contact ---------- */
+@media (min-width:560px){ .contact__actions{ grid-template-columns:repeat(2,1fr); } }
+
+/* ---------- Small-screen safety net (very narrow phones) ---------- */
+@media (max-width:360px){
+  .container{ padding-inline:16px; }
+  .hero__title{ font-size:30px; }
+}

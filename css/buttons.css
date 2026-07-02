@@ -1,0 +1,57 @@
+/* ==========================================================
+   BUTTONS.CSS — All Buttons + Ripple Effect
+========================================================== */
+
+.btn{
+  position:relative;
+  overflow:hidden;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:14px 26px;
+  border-radius:999px;
+  font-weight:600;
+  font-size:14.5px;
+  transition:transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.btn--primary{
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  color:#fff;
+  box-shadow:0 8px 24px -8px var(--primary-glow);
+}
+.btn--primary:hover{ transform:translateY(-2px); box-shadow:0 14px 30px -8px var(--primary-glow); }
+
+.btn--ghost{
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--border);
+  color:var(--text);
+  backdrop-filter:blur(8px);
+}
+.btn--ghost:hover{ background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.18); transform:translateY(-2px); }
+
+.btn--whatsapp{
+  background:rgba(37,211,102,.12);
+  border:1px solid rgba(37,211,102,.35);
+  color:#25D366;
+}
+.btn--whatsapp:hover{ background:rgba(37,211,102,.2); transform:translateY(-2px); }
+
+.btn--sm{ padding:10px 20px; font-size:13.5px; }
+.btn--block{ width:100%; justify-content:center; }
+
+.btn--icon-only{
+  width:52px; height:52px; padding:0;
+  border-radius:50%;
+  justify-content:center;
+}
+
+/* ---------- Ripple ---------- */
+.ripple__circle{
+  position:absolute;
+  border-radius:50%;
+  background:rgba(255,255,255,.45);
+  transform:scale(0);
+  animation:ripple .6s ease-out forwards;
+  pointer-events:none;
+}
