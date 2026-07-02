@@ -74,3 +74,12 @@
 .review-card__person i{ font-size:34px; color:var(--secondary); }
 .review-card__person strong{ display:block; font-size:13.5px; }
 .review-card__person span{ display:block; font-size:12px; color:var(--paragraph); }
+
+.work-card img{
+    position: relative;
+    z-index: 2;
+}
+
+.work-card__fallback{
+    z-index: 1;
+}
