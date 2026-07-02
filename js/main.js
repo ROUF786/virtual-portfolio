@@ -17,13 +17,13 @@
     name:         'Rouf Bagwan',
     role:         'Graphic Designer & Web Developer',
     org:          'Freelance',
-    tagline:      'I design clean business cards, thumbnails and social posts — fast, affordable, made for you.',
-    phone:        '+910000000000',      // full international format — used for tel: + vCard
-    phoneDisplay: '+91 00000 00000',    // human-readable version shown on the page
-    whatsapp:     '910000000000',       // digits only, no + — used for wa.me links
-    email:        'hello@rouf.in',
+    tagline:      'Premium Graphic Design • Modern Websites • Digital Branding Solutions',
+    phone:        '+91 6361050323',      // full international format — used for tel: + vCard
+    phoneDisplay: '+91 6361050323',    // human-readable version shown on the page
+    whatsapp:     '+916361050323',       // digits only, no + — used for wa.me links
+    email:        'info@rouf.in',
     website:      'https://rouf.in',
-    address:      'Bangalore, Karnataka, India'
+    address:      'Bijapur, Karnataka, India'
   };
 
   document.addEventListener('DOMContentLoaded', function(){
